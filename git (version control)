@@ -1,0 +1,21 @@
+#Git: Global information tracker
+
+#version control system: it's a distributed version control system which stores all the versions of a source code, we can revert back if we face any issues with the current source code version.
+
+#it will store each version of code seperately.
+
+#To install:
+yum install git -y
+git --version
+
+#Making a git repo-> commity -> check status
+mkdir gitprac   				#create a folder
+cd gitprac					    #go to that folder
+touch file1					    #create a file
+
+#Commands to add that file to directory and git repositry
+
+git init			
+git status
+git add file1
+git commit -m "file:v1" file1
