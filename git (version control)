@@ -10,12 +10,63 @@ git --version
 
 #Making a git repo-> commity -> check status
 mkdir gitprac   				#create a folder
-cd gitprac					    #go to that folder
-touch file1					    #create a file
+cd gitprac					#go to that folder
+touch file1					#create a file
 
 #Commands to add that file to directory and git repositry
 
+ll-a 						#to check the local repo
+
+#if there is no .git file git commands won't work so need to use git init
+ 
 git init			
 git status
 git add file1
 git commit -m "file:v1" file1
+
+#Branches & github:
+#after writing will first pull into a particular branch which are part of application
+#we can merge all source code in a single branch
+#activites like pull push fetch 
+#first we need to commit to see git branch
+#default git:master github: main
+
+#git branch							: to list branches
+#git branch branch_name					: to create new branche
+#git checkout branch_name				: to switch between branches
+#git checkout -b dth					: to create and switch at same time
+
+#hist
+touch index.html
+touch index.js
+git add index*
+git commit -m "v-1" index*
+git branch
+git branch home_tab
+git checkout home_tab
+ll
+touch home.js
+git add home.js
+git commit -m "v-1" home.js
+git checkout -b amazon_pay
+ll
+
+#github: 
+#it's a remote repository. Source will be available on internet, if our source code delete on local repository we can get from github, we can merge multiple source code to run or to make the application work.
+
+#the source code will be first pulled to github which will merge the different services of an application to work.
+
+#to generate a github token instead of password
+# go to my account -> settings -> developer settings -> personal access tokens -> token (classic) -> Generate a new token (classic) -> select  classic  (select tocken name, token period, token info)
+
+#to connect local repository and github
+git remote add origin https://github.com/bkhemanth17/test.git
+git push origin master 				#to push branch from local repository to github
+git push origin home_tab
+git push origin amazon_pay
+
+#to get source code from github to local machine
+git clone https://github.com/bkhemanth17/test.git
+git checkout master
+git checkout home_tab
+git checkout amazon_pay
