@@ -70,3 +70,119 @@ git clone https://github.com/bkhemanth17/test.git
 git checkout master
 git checkout home_tab
 git checkout amazon_pay
+
+#git merge
+#to copy files between branches in a repository
+git checkout master
+git merge spring
+
+#we can do git merge in gui goto github repo -> pull request -> select to and from branches to merge -> click on commit merge -> the files will be merged.
+
+#git rebase
+#it is also used to copy files between branches
+#difference between merge and rebase : merge -> for public repo, merge will show files and history & rebase -> for private repo, will not show files and history.
+
+git checkout master
+git rebase docker cont1
+
+#git revert
+#to delete the files, to undo changes between branches
+git revert project1
+
+#git clone
+#copy source code from github repository to local repository
+git checkout https://github.com/bkhemanth17/test.git
+
+#git fork
+#to copy the source from one user to another user using git for in gui.
+
+#git pull
+#for saving the changes made on github
+# local -> public
+git pull origin master
+
+#git fetch
+#to show the changes made on git but will not save unlike git pull
+git fetch origin master
+
+#git branch -D branch_name	: to delete a branch
+#git pull origin branch_name	: to restore a branch
+#git branch -m old new		: to rename a branch
+
+
+
+project-1:
+
+#Master branch:
+
+sudo -i
+yum install git -y
+git --version
+mkdir git_practice
+cd git_practice
+ll -a
+git init
+touch index.html
+git add index.html
+git commit -m 'v:1' index.html
+
+#project-1 branch:
+git branch
+git branch project1
+git checkout project1
+touch file.js
+git add file.js
+git commit -m 'v:1' file.js
+
+#branch-2:
+git checkout -b project2
+touch home.js
+git add home.js
+git commit -m 'v:1' home.js
+
+#to push from local repo to github
+git remote add origin https://github.com/bkhemanth17/test
+git push origin master
+git push branch1
+git push branch2
+
+#verify
+git clone https://github.com/bkhemanth17/test
+cd test
+git branch
+git checkout master
+git checkout branch1
+git checkout branch2
+
+#git merge
+git checkout master
+git merger branch1
+
+#git rebase
+git checkout master
+git rebase branch2
+
+#git revert
+git revert branch1
+
+
+#git pull
+git checkout branch1
+git pull origin branch1
+
+#git fetch
+git checkout branch2
+git fetch origin branch2
+
+#to delete a branch
+git checkout master
+git branch -D branch1
+git branch -d branch2
+
+#revert
+git revert branch1
+git revert branch2
+
+#rename branch
+git branch -m branch1 project1
+git branch -m branch2 project2
